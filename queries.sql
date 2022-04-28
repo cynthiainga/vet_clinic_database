@@ -81,3 +81,19 @@ JOIN
 ON
   species.id = animals.species_id,
 GROUP BY species.name;
+
+SELECT
+  animals.name,
+  owners.full_name,
+  species.name
+FROM
+  animals
+JOIN
+  species
+ON
+  species.id = animals.species_id
+JOIN
+  owners
+ON
+  owners.id = animals.owners_id
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
