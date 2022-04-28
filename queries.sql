@@ -22,3 +22,4 @@ BEGIN;
 DELETE FROM animals WHERE data_of_birth > '2022-01-01';
 SAVEPOINT SP1;
 UPDATE animals SET weight_kg = -1 * weight_kg;
+ROLLBACK TO SP1;
