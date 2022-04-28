@@ -8,3 +8,5 @@ SELECT * FROM animals WHERE neutered = true;
 SELECT * FROM animals WHERE NOT name = 'Gabumon';
 SELECT name FROM animals WHERE weight_kg > 10.5;
 SELECT * FROM animals WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
