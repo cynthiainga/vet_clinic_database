@@ -24,11 +24,9 @@ INSERT INTO species(name)
 VALUES ('Pokemon'),
        ('Digimon');
 
-ALTER TABLE animals ADD species_id varchar(255);
 UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species_id = 'Pokemon' WHERE species_id IS NULL;
 
-ALTER TABLE animals ADD owners_id varchar(255);
 UPDATE animals SET owners_id = 'Sam Smith ' WHERE name = 'Agumon';
 UPDATE animals SET owners_id = 'Jennifer Orwell ' WHERE name = 'Pikachu' OR name ='Gabumon';
 UPDATE animals SET owners_id = 'Bob' WHERE name = 'Devimon' OR name = 'Plantmon';
