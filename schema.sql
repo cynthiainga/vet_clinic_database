@@ -6,10 +6,13 @@ CREATE TABLE animals(
   date_of_birth date,
   escape_attempts INT NOT NULL,
   neutered boolean,
-  weight_kg decimal(5, 2),
+  weight_kg decimal(5, 2)
 );
 
 ALTER TABLE animals ADD species varchar(255);
+
+ALTER TABLE animals ALTER COLUMN id DROP IDENTITY IF EXISTS;
+ALTER TABLE animals ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 CREATE TABLE owners(
   id INT GENERATED ALWAYS AS IDENTITY,
