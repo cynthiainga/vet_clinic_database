@@ -70,3 +70,14 @@ LEFT JOIN
   animals
 ON
   owners.id = animals.owners_id;
+
+SELECT
+  species.name,
+  COUNT(*)
+FROM
+  animals
+JOIN
+  species
+ON
+  species.id = animals.species_id,
+GROUP BY species.name;
