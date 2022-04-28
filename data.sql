@@ -42,8 +42,10 @@ WHERE
   species_id IS NULL;
 COMMIT;
 
-UPDATE animals SET owners_id = 'Sam Smith ' WHERE name = 'Agumon';
-UPDATE animals SET owners_id = 'Jennifer Orwell ' WHERE name = 'Pikachu' OR name ='Gabumon';
-UPDATE animals SET owners_id = 'Bob' WHERE name = 'Devimon' OR name = 'Plantmon';
-UPDATE animals SET owners_id = 'Melody Pond ' WHERE name = 'Charmander' OR name ='Squirtle' OR name ='Blossom';
-UPDATE animals SET owners_id = 'Dean Winchester' WHERE name = 'Angemon' OR name = 'Boarmon';
+BEGIN;
+UPDATE animals SET owners_id = 1 WHERE name IN ('Agumon');
+UPDATE animals SET owners_id = 2 WHERE name IN ('Pikachu', 'Gabumon');
+UPDATE animals SET owners_id = 3 WHERE name IN ('Devimon', 'Plantmon');
+UPDATE animals SET owners_id = 4 WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+UPDATE animals SET owners_id = 5 WHERE name IN ('Angemon', 'Boarmon');
+COMMIT;
