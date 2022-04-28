@@ -29,3 +29,8 @@ UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species_id = 'Pokemon' WHERE species_id IS NULL;
 
 ALTER TABLE animals ADD owners_id varchar(255);
+UPDATE animals SET owners_id = 'Sam Smith ' WHERE name = 'Agumon';
+UPDATE animals SET owners_id = 'Jennifer Orwell ' WHERE name = 'Pikachu' OR name ='Gabumon';
+UPDATE animals SET owners_id = 'Bob' WHERE name = 'Devimon' OR name = 'Plantmon';
+UPDATE animals SET owners_id = 'Melody Pond ' WHERE name = 'Charmander' OR name ='Squirtle' OR name ='Blossom';
+UPDATE animals SET owners_id = 'Dean Winchester' WHERE name = 'Angemon' OR name = 'Boarmon';
