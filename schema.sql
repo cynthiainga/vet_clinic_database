@@ -9,4 +9,4 @@ CREATE TABLE animals(
     weight_kg decimal(5, 2),
 );
 
-ALTER animals ADD species varchar(255);
+ALTER TABLE animals ADD species varchar(255);
