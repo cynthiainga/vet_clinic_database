@@ -60,3 +60,13 @@ ON
   animals.species_id =species.id
 WHERE
   species.name = 'Pokemon';
+
+SELECT
+  animals.name,
+  owners.full_name
+FROM
+  owners
+LEFT JOIN
+  animals
+ON
+  owners.id = animals.owners_id;
