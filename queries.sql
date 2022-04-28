@@ -20,3 +20,4 @@ ROLLBACK;
 
 BEGIN;
 DELETE FROM animals WHERE data_of_birth > '2022-01-01';
+SAVEPOINT SP1;
