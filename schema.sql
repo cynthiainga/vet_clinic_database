@@ -11,17 +11,15 @@ CREATE TABLE animals(
 
 ALTER TABLE animals ADD species varchar(255);
 
-ALTER TABLE animals ALTER COLUMN id DROP IDENTITY IF EXISTS;
-ALTER TABLE animals ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
-ALTER TABLE animals DROP species;
-
 CREATE TABLE owners(
   id INT GENERATED ALWAYS AS IDENTITY,
   full_name varchar(255),
-  age INT NOT NULL
+  age INT NOT NULL,
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE species(
   id INT GENERATED ALWAYS AS IDENTITY,
-  name varchar(255) 
+  name varchar(255),
+  PRIMARY KEY (id)
 );
