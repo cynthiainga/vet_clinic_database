@@ -20,4 +20,8 @@ VALUES ('Sam Smith', 34),
        ('Dean Winchester', 14),
        ('Jodie Whittaker', 38);
 
+INSERT INTO species(name)
+VALUES ('Pokemon'),
+       ('Digimon');
+
 ALTER TABLE animals ADD species_id varchar(255);
