@@ -26,3 +26,4 @@ VALUES ('Pokemon'),
 
 ALTER TABLE animals ADD species_id varchar(255);
 UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 'Pokemon' WHERE species_id IS NULL;
