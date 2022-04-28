@@ -27,3 +27,35 @@ CREATE TABLE species(
 ALTER TABLE animals ALTER COLUMN id  DROP IDENTITY IF EXISTS;
 ALTER TABLE animals ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 ALTER TABLE animals ADD PRIMARY KEY (id);
+
+ALTER TABLE animals DROP species;
+
+BEGIN;
+
+ALTER TABLE 
+  animals
+ADD
+  species_id INTEGER;
+
+ALTER TABLE 
+  animals
+ADD
+  owners_id INTEGER;
+
+ALTER TABLE
+  animals
+ADD CONSTRAINT
+  fk_owner
+FOREIGN KEY(owners_id)
+REFERENCES
+  owners(id);
+
+ALTER TABLE
+  animals
+ADD CONSTRAINT
+  fk_species
+FOREIGN KEY(species_id)
+REFERENCES
+  owners(id);
+
+COMMIT; 
