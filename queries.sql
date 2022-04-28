@@ -24,3 +24,4 @@ SAVEPOINT SP1;
 UPDATE animals SET weight_kg = -1 * weight_kg;
 ROLLBACK TO SP1;
 UPDATE animals SET weight_kg = -1 * weight_kg WHERE weight_kg < 0;
+COMMIT;
