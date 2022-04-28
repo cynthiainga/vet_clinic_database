@@ -24,8 +24,23 @@ INSERT INTO species(name)
 VALUES ('Pokemon'),
        ('Digimon');
 
-UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 'Pokemon' WHERE species_id IS NULL;
+BEGIN;
+UPDATE
+  animals
+SET
+  species_id = 2
+WHERE
+  name LIKE '%mon';
+COMMIT;
+
+BEGIN;
+UPDATE
+  animals
+SET
+  species_id = 1
+WHERE
+  species_id IS NULL;
+COMMIT;
 
 UPDATE animals SET owners_id = 'Sam Smith ' WHERE name = 'Agumon';
 UPDATE animals SET owners_id = 'Jennifer Orwell ' WHERE name = 'Pikachu' OR name ='Gabumon';
