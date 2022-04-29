@@ -167,3 +167,24 @@ RIGHT JOIN
   vets
 ON
   specializations.vet_id = vets.id;
+
+SELECT
+  animals_id,
+  animals.name,
+  visits.date_of_visit,
+  vets.name
+FROM
+  animals
+JOIN
+  visits
+ON
+  visits.animals_id = animals.id
+JOIN
+  vets
+ON
+  visits.vets_id = vets.id
+WHERE
+  vets.name = 'Stephanie Mendez'
+  AND
+    visits.date_of_visit
+    BETWEEN '2020-04-01' AND '2020-08-30';
