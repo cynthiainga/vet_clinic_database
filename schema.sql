@@ -56,6 +56,6 @@ ADD CONSTRAINT
   fk_species
 FOREIGN KEY(species_id)
 REFERENCES
-  owners(id);
+  species(id);
 
 COMMIT; 
