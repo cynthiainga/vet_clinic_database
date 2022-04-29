@@ -143,3 +143,18 @@ ORDER BY
   date_of_visit DESC
 LIMIT
   1;
+
+SELECT
+  COUNT(DISTINCT animals.name)
+FROM
+  visits
+JOIN
+  animals
+ON
+  visits.animals_id = animals.id
+JOIN
+  vets
+ON
+  visits.vets_id = vets.id
+WHERE
+  vets.name = 'Stephanie Mendez';
