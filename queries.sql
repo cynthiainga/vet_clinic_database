@@ -248,3 +248,18 @@ WHERE
   specializations.species_id <> animals.species_id
   OR
   specializations.species_id IS NULL;
+
+SELECT
+  COUNT(*) AS species
+FROM
+  visits
+FULL OUTER JOIN
+  vets
+ON
+  visits.vets_id = vets.id
+FULL OUTER JOIN
+  specializations
+ON
+  specializations.vets_id = vets.id
+WHERE
+  species_id IS NULL;
