@@ -160,13 +160,18 @@ WHERE
   vets.name = 'Stephanie Mendez';
 
 SELECT
-  vets.name, species_id as speciality_id
+  vet.name AS Vet_Name,
+  Specialities.name AS Speciality
 FROM
+  vets vet
+LEFT JOIN
   specializations
-RIGHT JOIN
-  vets
 ON
-  specializations.vet_id = vets.id;
+  vet.id = specializations.vets_id
+LEFT JOIN
+  species Specialities
+ON
+  specializations.species_id = Specialities.id;
 
 SELECT
   animals_id,
@@ -190,18 +195,24 @@ WHERE
     BETWEEN '2020-04-01' AND '2020-08-30';
 
 SELECT
-  animals.name,
-  COUNT(*) AS visits
+  animal.name AS aniamls,
+  COUNT(animal.name) AS visited
 FROM
-  visits
+  animals animal
 JOIN
-  animals
+  visits visit
 ON 
-  visits.animals_id = animals.id 
+  visit.animals_id = animal.id
+JOIN
+  vets vet
+ON
+  visit.vets_id = vet.id
 GROUP BY
-  animals.name
+  animal.name
 ORDER BY
-  visits DESC;
+  visited DESC
+LIMIT
+  1;
 
 SELECT
   animals_id,
@@ -210,7 +221,7 @@ SELECT
   visits.date_of_visit
 FROM
   visits
-  JOIN vets Ve ON visits.vets_id = vets.id
+  JOIN vets ON visits.vets_id = vets.id
   JOIN animals ON visits.animals_id = animals.id
 WHERE
   vets.name = 'Maisy Smith'
@@ -221,33 +232,47 @@ ASC LIMIT
 
 SELECT
   animals.name AS animal,
-  date_of_visits,
-  vets.name AS "Vet name",
+  animals.date_of_birth AS "Date of Birth",
+  animals.escape_attempts AS Escapes,
+  animals.neutered AS Neutered,
+  animals.weight_kg AS Weigth,
+  specy.name AS species,
+  vet.name AS "Vet name",
+  vet.age AS "Vet age",
+  vet.date_of_graduation AS "Date of vet graduation",
+  date_of_visit
 FROM
-  aniamls
-  JOIN vets ON visits.vets_id = vets.id
-  JOIN visits ON visits.animals_id = animals.id
+  visits visit
+  JOIN vets vet ON visit.vets_id = vet.id
+  JOIN animals animals ON visit.animals_id = animals.id
+  JOIN species specy ON animals.species_id = specy.id
 ORDER BY
   date_of_visit DESC
 LIMIT
   1;
 
 SELECT
-  COUNT(*)
+  COUNT(specy.name),
+  specy.name
 FROM
-  visits
-LEFT JOIN 
-  specializations
-ON 
-  visits.vets_id = specializations.vets_id
+  visits visit
 JOIN 
-  animals
+  animals animal
 ON 
-  visits.animals_id = animals.id
+  visit.animals_id = animal.id
+JOIN 
+  species specy
+ON 
+  animal.species_id = specy.id
+JOIN
+  vets vet
+ON
+  visit.vets_id = vet.id
 WHERE
-  specializations.species_id <> animals.species_id
-  OR
-  specializations.species_id IS NULL;
+  vets_id = 2
+GROUP BY(specy.name)
+LIMIT
+  1;
 
 SELECT
   COUNT(*) AS species
