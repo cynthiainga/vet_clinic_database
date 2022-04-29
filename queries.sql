@@ -79,7 +79,7 @@ FROM
 JOIN
   species
 ON
-  species.id = animals.species_id,
+  species.id = animals.species_id
 GROUP BY species.name;
 
 SELECT
@@ -115,7 +115,7 @@ FROM
 JOIN
   owners
 ON
-  animals.owner_id = owners.id
+  animals.owners_id = owners.id
 GROUP BY
   owners.full_name
 ORDER BY
