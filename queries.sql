@@ -202,3 +202,19 @@ GROUP BY
   animals.name
 ORDER BY
   visits DESC;
+
+SELECT
+  animals_id,
+  vets.name,
+  animals.name,
+  visits.date_of_visit
+FROM
+  visits
+  JOIN vets Ve ON visits.vets_id = vets.id
+  JOIN animals ON visits.animals_id = animals.id
+WHERE
+  vets.name = 'Maisy Smith'
+ORDER BY
+  date_of_visit
+ASC LIMIT
+  1;
