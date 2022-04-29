@@ -218,3 +218,16 @@ ORDER BY
   date_of_visit
 ASC LIMIT
   1;
+
+SELECT
+  animals.name AS animal,
+  date_of_visits,
+  vets.name AS "Vet name",
+FROM
+  aniamls
+  JOIN vets ON visits.vets_id = vets.id
+  JOIN visits ON visits.animals_id = animals.id
+ORDER BY
+  date_of_visit DESC
+LIMIT
+  1;
