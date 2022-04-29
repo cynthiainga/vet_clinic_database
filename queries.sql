@@ -231,3 +231,20 @@ ORDER BY
   date_of_visit DESC
 LIMIT
   1;
+
+SELECT
+  COUNT(*)
+FROM
+  visits
+LEFT JOIN 
+  specializations
+ON 
+  visits.vets_id = specializations.vets_id
+JOIN 
+  animals
+ON 
+  visits.animals_id = animals.id
+WHERE
+  specializations.species_id <> animals.species_id
+  OR
+  specializations.species_id IS NULL;
