@@ -188,3 +188,17 @@ WHERE
   AND
     visits.date_of_visit
     BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT
+  animals.name,
+  COUNT(*) AS visits
+FROM
+  visits
+JOIN
+  animals
+ON 
+  visits.animals_id = animals.id 
+GROUP BY
+  animals.name
+ORDER BY
+  visits DESC;
