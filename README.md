@@ -30,6 +30,12 @@ Before starting the steps below, be sure you have [Git](https://www.linode.com/d
 - Twitter: [@CynthiaInga_C](https://twitter.com/CynthiaInga_C)
 - LinkedIn: [Cynthia Inga](https://www.linkedin.com/in/cynthia-inga/)
 
+👤 **Souad El Mansouri**
+
+- GitHub: [@souad988](https://github.com/souad988)
+- Twitter: [@souadElmansouri](@souadElmansouri)
+- LinkedIn: [Souad el mansouri](https://www.linkedin.com/in/souad-el-mansouri/)
+
 
 ## 🤝 Contributing
 
