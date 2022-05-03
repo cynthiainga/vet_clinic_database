@@ -14,7 +14,7 @@ ALTER TABLE animals ADD species varchar(255);
 CREATE TABLE owners(
   id INT GENERATED ALWAYS AS IDENTITY,
   full_name varchar(255),
-  age INT NOT NULL,
+  age INT,
   PRIMARY KEY (id)
 );
 
@@ -82,3 +82,10 @@ CREATE TABLE visits(
   FOREIGN KEY (animals_id) REFERENCES animals (id),
   FOREIGN KEY (vets_id) REFERENCES vets (id)
 );
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+ALTER TABLE visits ADD COLUMN id INT GENERATED ALWAYS AS IDENTITY;
+ALTER TABLE visits ADD PRIMARY KEY (id);
+
+CREATE INDEX owners_email_asc ON owners(email);
