@@ -4,6 +4,9 @@
 
 > "Vet Clinic Database" is a project where I use a relational database to create the initial data structure for a vet clinic that includes a table to store animals' information, insert some data into it, and query it.
 
+## Diagram
+
+[Vet_Clinic_Diagram](./vet_clinic_diagram.png)
 
 ## Getting Started
 
@@ -22,7 +25,7 @@ Before starting the steps below, be sure you have [Git](https://www.linode.com/d
 1. `git clone https://github.com/cynthiainga/vet_clinic_database.git`
 2. `cd vet_clinic_database`
 
-## Author
+## Authors
 
 👤 **Candy Inga Cynthia**
 
