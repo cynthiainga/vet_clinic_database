@@ -6,7 +6,7 @@
 
 ## Diagram
 
-[Vet Clinic Diagram](./vet_clinic_diagram.png)
+![Vet Clinic Diagram](./vet_clinic_diagram.png)
 
 ## Getting Started
 
